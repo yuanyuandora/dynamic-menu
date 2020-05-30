@@ -39,7 +39,7 @@ class Button extends React.Component {
     showSubMenu(subMenus) {
         let subMenu = [];
         for (const [i, item] of Object.entries(subMenus)) {
-            subMenu.push(<li key={i}><Button buttonProps={item} showForm={this.props.showForm}
+            subMenu.push(<li key={"button-" + i}><Button buttonProps={item} showForm={this.props.showForm}
                                              showMenu={this.props.showMenu}  parentMenuData={this.props.menuData} showMessage={this.props.showMessage}/></li>);
         }
         return subMenu;

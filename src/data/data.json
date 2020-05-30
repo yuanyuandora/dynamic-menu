@@ -32,15 +32,13 @@
                   "formFields": [
                     {
                       "type": "text",
-                      "name": "username"
+                      "name": "username",
+                      "label": "Username"
                     },
                     {
                       "type": "password",
-                      "name": "password"
-                    },
-                    {
-                      "type": "dropdown",
-                      "name": "options"
+                      "name": "password",
+                      "label": "Password"
                     }
                   ]
                 },
@@ -66,15 +64,21 @@
       "formFields": [
         {
           "type": "text",
-          "name": "username"
+          "name": "username",
+          "label": "Username"
         },
         {
           "type": "password",
-          "name": "password"
+          "name": "password",
+          "label": "Password"
         },
         {
           "type": "dropdown",
-          "name": "options"
+          "name": "state",
+          "options":[
+            "ACT","NSW","NT","QLD","SA","TAS","VIC","WA"
+          ],
+          "label": "State"
         }
       ]
     },

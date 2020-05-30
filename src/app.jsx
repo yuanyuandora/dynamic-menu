@@ -89,7 +89,7 @@ class App extends React.Component {
 
         if (this.props.menuData && this.props.menuData.length > 0) {
             for (const [i, item] of Object.entries(this.props.menuData)) {
-                menu.push(<li key={i}><Button buttonProps={item} showMenu={this.props.showMenu}
+                menu.push(<li key={"button-" + i}><Button buttonProps={item} showMenu={this.props.showMenu}
                                               showForm={this.props.showForm} parentMenuData={this.props.menuData} showMessage={this.props.showMessage}/>
                 </li>);
             }
