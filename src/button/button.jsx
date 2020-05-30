@@ -29,7 +29,7 @@ class Button extends React.Component {
                 }
                 break;
             case "placeholder":
-
+                this.props.showMessage("Coming Soon...");
                 break;
         }
 
@@ -40,7 +40,7 @@ class Button extends React.Component {
         let subMenu = [];
         for (const [i, item] of Object.entries(subMenus)) {
             subMenu.push(<li key={i}><Button buttonProps={item} showForm={this.props.showForm}
-                                             showMenu={this.props.showMenu}  parentMenuData={this.props.menuData}/></li>);
+                                             showMenu={this.props.showMenu}  parentMenuData={this.props.menuData} showMessage={this.props.showMessage}/></li>);
         }
         return subMenu;
     }

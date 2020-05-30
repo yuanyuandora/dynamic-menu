@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/button/button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/button/button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/form/form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/form/form.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+            <state relative-caret-position="345">
+              <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -41,8 +39,8 @@
       <file leaf-file-name="button.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/button/button.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="69" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="69" />
+            <state relative-caret-position="384">
+              <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -53,8 +51,8 @@
       <file leaf-file-name="form.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/form/form.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="14" />
+            <state relative-caret-position="255">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -71,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data/data.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
+            <state relative-caret-position="975">
               <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
             </state>
           </provider>
@@ -165,9 +163,9 @@
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/index.jsx" />
         <option value="$PROJECT_DIR$/src/form/form.jsx" />
-        <option value="$PROJECT_DIR$/src/app.jsx" />
-        <option value="$PROJECT_DIR$/src/button/button.jsx" />
         <option value="$PROJECT_DIR$/src/data/data.json" />
+        <option value="$PROJECT_DIR$/src/button/button.jsx" />
+        <option value="$PROJECT_DIR$/src/app.jsx" />
       </list>
     </option>
   </component>
@@ -293,12 +291,12 @@
       <updated>1590731919203</updated>
       <workItem from="1590731920573" duration="504000" />
       <workItem from="1590737118958" duration="2848000" />
-      <workItem from="1590747179143" duration="25516000" />
+      <workItem from="1590747179143" duration="26501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28868000" />
+    <option name="totallyTimeSpent" value="29853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="6" />
@@ -340,7 +338,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app.jsx</url>
-          <line>22</line>
+          <line>23</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -519,10 +517,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/form/form.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="14" />
+        <state relative-caret-position="255">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/button/button.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -531,28 +546,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="99" column="10" lean-forward="true" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+        <state relative-caret-position="345">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/button/button.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="69" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
         </state>
       </provider>
     </entry>

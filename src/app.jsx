@@ -10,6 +10,7 @@ import Form from "./form/form";
 const SHOW_MENU = 'SHOW_MENU';
 const SHOW_FORM = 'SHOW_FORM';
 const CANCEL_SUBMISSION = 'CANCEL_SUBMISSION';
+const SHOW_MESSAGE = 'SHOW_MESSAGE';
 
 //actions
 const showMenu = (menuData) => {
@@ -31,6 +32,12 @@ const cancelSubmission = (parentMenuData) => {
         parentMenuData: parentMenuData
     }
 };
+const showMessage = (message) => {
+    return {
+        type: SHOW_MESSAGE,
+        message: message
+    }
+};
 
 // const INITIAL_CONTENT = "Home";
 const INITIAL_DATA = data.children;
@@ -41,18 +48,26 @@ const appReducer = (state = {menuData: INITIAL_DATA, formFields: []}, action, pa
             return {
                 menuData: [],
                 formFields: action.formFields,
-                parentMenuData: action.parentMenuData
+                parentMenuData: action.parentMenuData,
+                message: ""
             };
         case SHOW_MENU:
             return {
                 menuData: action.menuData,
-                formFields: []
+                formFields: [],
+                message: ""
             };
         case CANCEL_SUBMISSION:
-            console.log(action.parentMenuData);
             return {
                 menuData: action.parentMenuData, //return to previous clicked menu
-                formFields: []
+                formFields: [],
+                message: ""
+            };
+        case SHOW_MESSAGE:
+            return {
+                menuData: state.menuData,
+                formFields: [],
+                message: action.message,
             };
         default:
             return state;
@@ -75,7 +90,8 @@ class App extends React.Component {
         if (this.props.menuData && this.props.menuData.length > 0) {
             for (const [i, item] of Object.entries(this.props.menuData)) {
                 menu.push(<li key={i}><Button buttonProps={item} showMenu={this.props.showMenu}
-                                              showForm={this.props.showForm} parentMenuData={this.props.menuData}/></li>);
+                                              showForm={this.props.showForm} parentMenuData={this.props.menuData} showMessage={this.props.showMessage}/>
+                </li>);
             }
         }
 
@@ -88,14 +104,24 @@ class App extends React.Component {
                     </nav>
                 }
 
-                <section>
 
-                    {
-                        this.props.formFields.length > 0 &&
-                        <Form formFields={this.props.formFields} cancelSubmission={this.props.cancelSubmission} parentMenuData={this.props.parentMenuData}/>
-                    }
+                {
+                    this.props.formFields.length > 0 &&
+                    <section>
+                        <Form formFields={this.props.formFields} cancelSubmission={this.props.cancelSubmission}
+                              parentMenuData={this.props.parentMenuData}/>
+                    </section>
+                }
 
-                </section>
+                {
+                    this.props.message &&
+                        <div>
+                            {this.props.message}
+                        </div>
+                }
+
+
+
             </Fragment>
         );
     }
@@ -115,6 +141,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         cancelSubmission: (parentMenuData) => {
             dispatch(cancelSubmission(parentMenuData));
+        },
+        showMessage: (message)=>{
+            dispatch(showMessage(message));
         }
     }
 };
