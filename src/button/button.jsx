@@ -12,33 +12,35 @@ class Button extends React.Component {
     }
 
     handleClick() {
-        if (this.props.buttonProps.content) {
-            this.props.displayContent(this.props.buttonProps.content);
-        } else this.props.displayContent("Coming Soon...");
+        // if (this.props.buttonProps.content) {
+        //     this.props.displayContent(this.props.buttonProps.content);
+        // } else this.props.displayContent("Coming Soon...");
 
         switch (this.props.buttonProps.type) {
-                case "form":
-                    this.props.displayForm(this.props.buttonProps.fields);
-                    break;
-                case "nested":
-                    if (this.props.buttonProps.children && this.props.buttonProps.children.length > 0) {
-                        this.setState({
-                            subMenu: this.showSubMenu(this.props.buttonProps.children)
-                        });
-                    }
-                    break;
-                case "placeholder":
+            case "form":
+                this.props.showForm(this.props.buttonProps.fields, this.props.parentData);
+                break;
+            case "nested":
+                if (this.props.buttonProps.children && this.props.buttonProps.children.length > 0) {
+                    // this.setState({
+                    //     subMenu: this.showSubMenu(this.props.buttonProps.children)
+                    // });
+                    this.props.showMenu(this.props.buttonProps.children);
+                }
+                break;
+            case "placeholder":
 
-                    break;
+                break;
         }
 
 
     }
 
-    showSubMenu (subMenus) {
+    showSubMenu(subMenus) {
         let subMenu = [];
         for (const [i, item] of Object.entries(subMenus)) {
-            subMenu.push(<li key={i} ><Button buttonProps={item} displayContent={this.props.displayContent} displayForm={this.props.displayForm}/></li>);
+            subMenu.push(<li key={i}><Button buttonProps={item} showForm={this.props.showForm}
+                                             showMenu={this.props.showMenu}  parentData={this.props.data}/></li>);
         }
         return subMenu;
     }
@@ -47,9 +49,9 @@ class Button extends React.Component {
         return (
             <div>
                 <button className={styles.button} onClick={this.handleClick}>{this.props.buttonProps.name}</button>
-                <ul>
+                {/*<ul>
                     {this.state.subMenu}
-                </ul>
+                </ul>*/}
             </div>
         );
     }

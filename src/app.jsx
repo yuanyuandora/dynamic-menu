@@ -7,46 +7,51 @@ import data from "./data/data.json";
 import Form from "./form/form";
 
 //Redux
-const SHOW_CONTENT = 'SHOW_CONTENT';
+const SHOW_MENU = 'SHOW_MENU';
 const SHOW_FORM = 'SHOW_FORM';
 const CANCEL_SUBMISSION = 'CANCEL_SUBMISSION';
+
 //actions
-const showContent = (content) => {
+const showMenu = (data) => {
     return {
-        type: SHOW_CONTENT,
-        content: content
+        type: SHOW_MENU,
+        data: data //menu data
     }
 };
-const showForm = (fields) => {
+const showForm = (fields, parentData) => {
     return {
         type: SHOW_FORM,
-        fields: fields
+        fields: fields,
+        parentData: parentData
     }
 };
-const cancelSubmission = () => {
+const cancelSubmission = (parentData) => {
     return {
         type: CANCEL_SUBMISSION,
+        parentData: parentData
     }
 };
 
-const INITIAL_CONTENT = "Home";
+// const INITIAL_CONTENT = "Home";
+const INITIAL_DATA = data.children;
 //Reducer
-const appReducer = (state = {content: INITIAL_CONTENT, fields: []}, action) => {
+const appReducer = (state = {data: INITIAL_DATA, fields: []}, action, parentData = {}) => {
     switch (action.type) {
         case SHOW_FORM:
             return {
-                content: state.content,
-                fields: action.fields
+                data: [], //menu data
+                fields: action.fields, //form fields
+                parentData: action.parentData
             };
-        case SHOW_CONTENT:
+        case SHOW_MENU:
             return {
-                content: action.content,
-                // fields: state.fields
+                data: action.data,
                 fields: []
             };
         case CANCEL_SUBMISSION:
+            console.log(action.parentData);
             return {
-                content: INITIAL_CONTENT, //@todo: change this to return to previous page content
+                data: action.parentData, //return to previous clicked menu
                 fields: []
             };
         default:
@@ -67,27 +72,27 @@ class App extends React.Component {
     render() {
         let menu = [];
 
-        for (const [i, item] of Object.entries(data.children)) {
-            menu.push(<li key={i}><Button buttonProps={item} displayContent={this.props.displayContent}
-                                          displayForm={this.props.displayForm}/></li>);
+        if (this.props.data && this.props.data.length > 0) {
+            for (const [i, item] of Object.entries(this.props.data)) {
+                menu.push(<li key={i}><Button buttonProps={item} showMenu={this.props.showMenu}
+                                              showForm={this.props.showForm} parentData={this.props.data}/></li>);
+            }
         }
 
         return (
             <Fragment>
-                <header>
+                {
+                    menu.length > 0 &&
                     <nav>
                         <ul>{menu}</ul>
                     </nav>
-                </header>
+                }
+
                 <section>
-                    {this.props.content.length > 0 &&
-                    <h2>
-                        {this.props.content}
-                    </h2>
-                    }
+
                     {
                         this.props.fields.length > 0 &&
-                        <Form fields={this.props.fields} cancelSubmission={this.props.cancelSubmission}/>
+                        <Form fields={this.props.fields} cancelSubmission={this.props.cancelSubmission} parentData={this.props.parentData}/>
                     }
 
                 </section>
@@ -98,22 +103,18 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
     return state;
-    // return {
-    //     content: state.content,
-    //     fields: state.fields
-    // };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        displayContent: (content) => { //functions in prop
-            dispatch(showContent(content));  //dispatch actions
+        showMenu: (data) => {
+            dispatch(showMenu(data));
         },
-        displayForm: (fields) => { //functions in prop
-            dispatch(showForm(fields));  //dispatch actions
+        showForm: (fields, parentData) => {
+            dispatch(showForm(fields, parentData));
         },
-        cancelSubmission: () => {
-            dispatch(cancelSubmission());
+        cancelSubmission: (parentData) => {
+            dispatch(cancelSubmission(parentData));
         }
     }
 };
