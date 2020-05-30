@@ -1,0 +1,61 @@
+{
+  "pageTitle": "Main Menu",
+  "children": [
+    {
+      "type": "nested",
+      "name": "Menu Item A",
+      "content": "Menu Item A Content",
+      "children": [
+        {
+          "type": "placeholder",
+          "name": "Menu Item D",
+          "content": "Menu Item D Content"
+        },
+        {
+          "type": "nested",
+          "name": "Menu Item E",
+          "content": "Menu Item E Content",
+          "children": [
+            {
+              "type": "placeholder",
+              "name": "Menu Item G",
+              "content": "Menu Item G Content"
+            },
+            {
+              "type": "placeholder",
+              "name": "Menu Item H"
+            }
+          ]
+        },
+        {
+          "type": "placeholder",
+          "name": "Menu Item F"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "name": "Menu Item B (with Form)",
+      "content": "Menu Item B Content",
+      "fields": [
+        {
+          "type": "text",
+          "name": "username"
+        },
+        {
+          "type": "password",
+          "name": "password"
+        },
+        {
+          "type": "dropdown",
+          "name": "options"
+        }
+      ]
+    },
+    {
+      "type": "placeholder",
+      "name": "Menu Item C"
+    }
+
+  ]
+}
