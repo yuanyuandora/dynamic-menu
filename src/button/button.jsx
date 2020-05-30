@@ -18,7 +18,7 @@ class Button extends React.Component {
 
         switch (this.props.buttonProps.type) {
             case "form":
-                this.props.showForm(this.props.buttonProps.fields, this.props.parentData);
+                this.props.showForm(this.props.buttonProps.formFields, this.props.parentMenuData);
                 break;
             case "nested":
                 if (this.props.buttonProps.children && this.props.buttonProps.children.length > 0) {
@@ -40,7 +40,7 @@ class Button extends React.Component {
         let subMenu = [];
         for (const [i, item] of Object.entries(subMenus)) {
             subMenu.push(<li key={i}><Button buttonProps={item} showForm={this.props.showForm}
-                                             showMenu={this.props.showMenu}  parentData={this.props.data}/></li>);
+                                             showMenu={this.props.showMenu}  parentMenuData={this.props.menuData}/></li>);
         }
         return subMenu;
     }

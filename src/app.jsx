@@ -12,47 +12,47 @@ const SHOW_FORM = 'SHOW_FORM';
 const CANCEL_SUBMISSION = 'CANCEL_SUBMISSION';
 
 //actions
-const showMenu = (data) => {
+const showMenu = (menuData) => {
     return {
         type: SHOW_MENU,
-        data: data //menu data
+        menuData: menuData //menu data
     }
 };
-const showForm = (fields, parentData) => {
+const showForm = (formFields, parentMenuData) => {
     return {
         type: SHOW_FORM,
-        fields: fields,
-        parentData: parentData
+        formFields: formFields,
+        parentMenuData: parentMenuData
     }
 };
-const cancelSubmission = (parentData) => {
+const cancelSubmission = (parentMenuData) => {
     return {
         type: CANCEL_SUBMISSION,
-        parentData: parentData
+        parentMenuData: parentMenuData
     }
 };
 
 // const INITIAL_CONTENT = "Home";
 const INITIAL_DATA = data.children;
 //Reducer
-const appReducer = (state = {data: INITIAL_DATA, fields: []}, action, parentData = {}) => {
+const appReducer = (state = {menuData: INITIAL_DATA, formFields: []}, action, parentMenuData = {}) => {
     switch (action.type) {
         case SHOW_FORM:
             return {
-                data: [], //menu data
-                fields: action.fields, //form fields
-                parentData: action.parentData
+                menuData: [],
+                formFields: action.formFields,
+                parentMenuData: action.parentMenuData
             };
         case SHOW_MENU:
             return {
-                data: action.data,
-                fields: []
+                menuData: action.menuData,
+                formFields: []
             };
         case CANCEL_SUBMISSION:
-            console.log(action.parentData);
+            console.log(action.parentMenuData);
             return {
-                data: action.parentData, //return to previous clicked menu
-                fields: []
+                menuData: action.parentMenuData, //return to previous clicked menu
+                formFields: []
             };
         default:
             return state;
@@ -72,10 +72,10 @@ class App extends React.Component {
     render() {
         let menu = [];
 
-        if (this.props.data && this.props.data.length > 0) {
-            for (const [i, item] of Object.entries(this.props.data)) {
+        if (this.props.menuData && this.props.menuData.length > 0) {
+            for (const [i, item] of Object.entries(this.props.menuData)) {
                 menu.push(<li key={i}><Button buttonProps={item} showMenu={this.props.showMenu}
-                                              showForm={this.props.showForm} parentData={this.props.data}/></li>);
+                                              showForm={this.props.showForm} parentMenuData={this.props.menuData}/></li>);
             }
         }
 
@@ -91,8 +91,8 @@ class App extends React.Component {
                 <section>
 
                     {
-                        this.props.fields.length > 0 &&
-                        <Form fields={this.props.fields} cancelSubmission={this.props.cancelSubmission} parentData={this.props.parentData}/>
+                        this.props.formFields.length > 0 &&
+                        <Form formFields={this.props.formFields} cancelSubmission={this.props.cancelSubmission} parentMenuData={this.props.parentMenuData}/>
                     }
 
                 </section>
@@ -107,14 +107,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        showMenu: (data) => {
-            dispatch(showMenu(data));
+        showMenu: (menuData) => {
+            dispatch(showMenu(menuData));
         },
-        showForm: (fields, parentData) => {
-            dispatch(showForm(fields, parentData));
+        showForm: (formFields, parentMenuData) => {
+            dispatch(showForm(formFields, parentMenuData));
         },
-        cancelSubmission: (parentData) => {
-            dispatch(cancelSubmission(parentData));
+        cancelSubmission: (parentMenuData) => {
+            dispatch(cancelSubmission(parentMenuData));
         }
     }
 };

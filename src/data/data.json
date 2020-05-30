@@ -29,7 +29,7 @@
                   "type": "form",
                   "name": "Menu Item I (with Form)",
                   "content": "Menu Item I Content",
-                  "fields": [
+                  "formFields": [
                     {
                       "type": "text",
                       "name": "username"
@@ -63,7 +63,7 @@
       "type": "form",
       "name": "Menu Item B (with Form)",
       "content": "Menu Item B Content",
-      "fields": [
+      "formFields": [
         {
           "type": "text",
           "name": "username"

@@ -5,7 +5,7 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
 
-        //console.log(this.props.parentData);
+        //console.log(this.props.parentMenuData);
 
         this.state = {
 
@@ -15,7 +15,7 @@ class Form extends React.Component {
     }
 
     handleCancel() {
-        this.props.cancelSubmission(this.props.parentData);
+        this.props.cancelSubmission(this.props.parentMenuData);
     }
 
     handleSubmit() {
