@@ -4,32 +4,32 @@
     {
       "type": "nested",
       "name": "Menu Item A",
-      "content": "Menu Item A Content",
       "children": [
         {
           "type": "placeholder",
-          "name": "Menu Item D",
-          "content": "Menu Item D Content"
+          "name": "Menu Item A1"
         },
         {
           "type": "nested",
-          "name": "Menu Item E",
-          "content": "Menu Item E Content",
+          "name": "Menu Item A2",
           "children": [
             {
               "type": "placeholder",
-              "name": "Menu Item G",
-              "content": "Menu Item G Content"
+              "name": "Menu Item A21"
             },
             {
               "type": "nested",
-              "name": "Menu Item H",
+              "name": "Menu Item A22",
               "children": [
                 {
                   "type": "form",
-                  "name": "Menu Item I (with Form)",
-                  "content": "Menu Item I Content",
+                  "name": "Menu Item A221 (with Form)",
                   "formFields": [
+                    {
+                      "type": "email",
+                      "name": "email",
+                      "label": "Email"
+                    },
                     {
                       "type": "text",
                       "name": "username",
@@ -44,8 +44,7 @@
                 },
                 {
                   "type": "placeholder",
-                  "name": "Menu Item J",
-                  "content": "Menu Item J Content"
+                  "name": "Menu Item A222"
                 }
               ]
             }
@@ -53,14 +52,13 @@
         },
         {
           "type": "placeholder",
-          "name": "Menu Item F"
+          "name": "Menu Item A3"
         }
       ]
     },
     {
       "type": "form",
       "name": "Menu Item B (with Form)",
-      "content": "Menu Item B Content",
       "formFields": [
         {
           "type": "text",
@@ -85,7 +83,18 @@
     {
       "type": "placeholder",
       "name": "Menu Item C"
+    },
+    {
+      "type": "placeholder",
+      "name": "Menu Item D"
+    },
+    {
+      "type": "placeholder",
+      "name": "Menu Item E"
+    },
+    {
+      "type": "placeholder",
+      "name": "Menu Item F"
     }
-
   ]
 }

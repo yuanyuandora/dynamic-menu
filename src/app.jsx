@@ -42,7 +42,7 @@ const showMessage = (message) => {
 // const INITIAL_CONTENT = "Home";
 const INITIAL_DATA = data.children;
 //Reducer
-const appReducer = (state = {menuData: INITIAL_DATA, formFields: []}, action, parentMenuData = {}) => {
+export const appReducer = (state = {menuData: INITIAL_DATA, formFields: []}, action) => {
     switch (action.type) {
         case SHOW_FORM:
             return {
@@ -115,9 +115,9 @@ class App extends React.Component {
 
                 {
                     this.props.message &&
-                        <div>
+                        <section className="message">
                             {this.props.message}
-                        </div>
+                        </section>
                 }
 
 
