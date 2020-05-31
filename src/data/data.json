@@ -3,23 +3,23 @@
   "children": [
     {
       "type": "nested",
-      "name": "Menu Item A",
+      "name": "Menu Item A (nested)",
       "children": [
         {
           "type": "placeholder",
-          "name": "Menu Item A1"
+          "name": "Menu Item A1 (placeholder)"
         },
         {
           "type": "nested",
-          "name": "Menu Item A2",
+          "name": "Menu Item A2 (nested)",
           "children": [
             {
               "type": "placeholder",
-              "name": "Menu Item A21"
+              "name": "Menu Item A21 (placeholder)"
             },
             {
               "type": "nested",
-              "name": "Menu Item A22",
+              "name": "Menu Item A22 (nested)",
               "children": [
                 {
                   "type": "form",
@@ -52,7 +52,7 @@
         },
         {
           "type": "placeholder",
-          "name": "Menu Item A3"
+          "name": "Menu Item A3 (placeholder)"
         }
       ]
     },
@@ -82,19 +82,19 @@
     },
     {
       "type": "placeholder",
-      "name": "Menu Item C"
+      "name": "Menu Item C (placeholder)"
     },
     {
       "type": "placeholder",
-      "name": "Menu Item D"
+      "name": "Menu Item D (placeholder)"
     },
     {
       "type": "placeholder",
-      "name": "Menu Item E"
+      "name": "Menu Item E (placeholder)"
     },
     {
       "type": "placeholder",
-      "name": "Menu Item F"
+      "name": "Menu Item F (placeholder)"
     }
   ]
 }
