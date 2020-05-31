@@ -7,8 +7,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import {mount} from 'enzyme';
 
-import AppWrapper, {appReducer} from './App';
-import Button from './button/button';
+import AppWrapper, {appReducer} from '../app';
+import Button from '../button/button';
 
 const formFields = [
     {

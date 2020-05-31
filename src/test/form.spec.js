@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 
-import Form from './form/form';
-import Button from "./button/button";
+import Form from '../form/form';
+import Button from "../button/button";
 
 const formFields = [
     {

@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 
-import Button from './button/button';
+import Button from '../button/button';
 
 const placeholderButton = {
     "type": "placeholder",
